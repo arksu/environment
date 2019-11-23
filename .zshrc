@@ -88,7 +88,9 @@ alias wcl="my_wcl"
 
 alias ka9="killall -9 java"
 
-. ~/ssh_aliases
+if [ -f ~/.ssh_aliases ]; then
+	. ~/ssh_aliases
+fi
 
 function setjdk() {
     if [ $# -ne 0 ]; then
@@ -104,6 +106,4 @@ function removeFromPath() {
     export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
 }
 setjdk 1.8
-export PATH="/usr/local/opt/mongodb@3.2/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
 
