@@ -23,9 +23,9 @@ alias cls="clear"
 #CLICOLOR="YES";    export CLICOLOR
 #LSCOLORS="ExGxFxdxCxDxDxhbadExEx";    export LSCOLORS
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
-fi
+#if [ -f `brew --prefix`/etc/bash_completion ]; then
+#    . `brew --prefix`/etc/bash_completion
+#fi
 
 my_pushreview() {
     git push -4 origin HEAD:refs/for/$1
