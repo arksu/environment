@@ -3,7 +3,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 alias ls="ls -GAh"
-alias cp="cp -i"
+#alias cp="cp -i"
 alias cpr="cp -iR"
 alias rm="rm -i"
 alias rmr="rm -fr"
@@ -88,7 +88,7 @@ alias wcl="my_wcl"
 
 alias ka9="killall -9 java"
 
-if [ -f ~/.ssh_aliases ]; then
+if [ -f ~/ssh_aliases ]; then
 	. ~/ssh_aliases
 fi
 
