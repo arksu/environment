@@ -33,9 +33,9 @@ my_pushreview() {
 
 my_new_branch() {
     if [ -z $1 ]; then 
-        echo "\$1 - new branch name; \$2 - based on branch"
+        echo "\$1 - based on branch; \$2 - new branch name"
     else
-        git checkout -b $1 origin/$2 && git push origin $1 -u
+        git checkout -b $2 origin/$1 && git push origin $2 -u
     fi
 }
 
@@ -49,7 +49,7 @@ my_checkout() {
 }
 
 my_wcl() {
-    wc -l  `find . -name "*.java"  -o -name "*.js" -o -name "*.ts" -type f` | tail -1
+    wc -l  `find . -name "*.java" -o -name "*.kt" -o -name "*.js" -o -name "*.ts" -type f` | tail -1
 }
 
 alias ping8="ping 8.8.8.8"
@@ -107,3 +107,6 @@ function removeFromPath() {
 }
 setjdk 1.8
 
+alias node18='export PATH="/opt/homebrew/opt/node@18/bin:$PATH"; node -v'
+alias node16='export PATH="/opt/homebrew/opt/node@16/bin:$PATH"; node -v'
+alias node14='export PATH="/opt/homebrew/opt/node@14/bin:$PATH"; node -v'
